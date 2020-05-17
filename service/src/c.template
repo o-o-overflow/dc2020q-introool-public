@@ -1,0 +1,6 @@
+char ropchain[] = "<data>";
+
+int main() {
+    <asmcode>
+    return 0;
+}

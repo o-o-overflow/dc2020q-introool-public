@@ -1,0 +1,14 @@
+#!/bin/sh
+
+exec 2>/dev/null
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8
+
+TMPDIR=$(mktemp -d)
+
+timeout -k1 15 stdbuf -i0 -o0 -e0 /introool/x.py doit --dir $TMPDIR
+if [ $? -ne 0 ]
+then
+  echo "killed"
+fi
+rm -rf $TMPDIR
